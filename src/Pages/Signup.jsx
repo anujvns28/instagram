@@ -2,9 +2,10 @@ import React from 'react'
 import AuthTemplet from '../Component/Core/Auth/AuthTemplet'
 
 const Signup = () => {
+  
   return (
     <div>
-      <AuthTemplet isLogin={false}/>
+      <AuthTemplet isLogin={false} />
     </div>
   )
 }
