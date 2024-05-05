@@ -64,3 +64,21 @@ export async function signup(data) {
   }
   return result
 }
+
+
+export async function login(data) {
+  let result
+  try {
+    const response = await apiConnector("POST", LOGIN_API, data)
+    console.log("login API RESPONSE............", response)
+    result = response.data
+    console.log(response.data.success)
+
+    if (!response.data.success) {
+      throw new Error(response.data.message)
+    }
+  } catch (error) {
+    console.log("login API ERROR............", error)
+  }
+  return result
+}

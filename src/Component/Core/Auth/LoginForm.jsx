@@ -1,13 +1,17 @@
 import React, { useState } from 'react'
 import { useForm } from 'react-hook-form';
 import { Link } from 'react-router-dom'
+import { login } from '../../../service/operation/Auth';
 
 const LoginForm = () => {
     const [showPass,setShowPass] = useState(false);
     const {register,handleSubmit,formState:{errors},} = useForm();
 
     const handleForm  = async(data) => {
-        console.log(data)
+        const result = await login(data);
+        if(result){
+            console.log(result)
+        }
     }
 
     return (
